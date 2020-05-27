@@ -12,4 +12,50 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-# Register your models here.
+from django.contrib import admin
+
+from .models import *
+
+# Configurações
+admin.site.site_header = 'GER-Clientes'
+admin.site.site_title = 'GER-Clientes'
+admin.site.index_title = 'Administração do GER-Clientes'
+
+
+class ChamadasInline(admin.TabularInline):
+    model = ChamadaTelefonica
+
+
+@admin.register(Cliente)
+class ClienteAdmin(admin.ModelAdmin):
+    fieldsets = (
+        ('Dados Pessoais', {
+            'classes': ('wide',),
+            'fields': ('nome', 'email', 'telefone', 'data_nascimento', 'cartao_cidadao', 'metodo_pagamento')
+        }),
+        ('Morada', {
+            'classes': ('wide',),
+            'fields': ('morada', 'codigo_postal', 'localidade', 'pais'),
+        }),
+        ('Redes Sociais', {
+            'classes': ('collapse',),
+            'fields': ('perfil_facebook',),
+        })
+    )
+    list_display = ('nome', 'email', 'telefone', 'localidade')
+    list_filter = ('metodo_pagamento',)
+    list_per_page = 30
+    list_select_related = True
+
+
+@admin.register(ChamadaTelefonica)
+class ChamadaTelefonicaAdmin(admin.ModelAdmin):
+    fields = ('cliente', 'data', 'hora', 'motivo', 'observacoes')
+    list_display = ('cliente', 'data', 'hora')
+    list_filter = ('motivo',)
+    list_per_page = 30
+    list_select_related = True
+
+
+admin.site.register(MetodoPagamento)
+admin.site.register(MotivoChamadaTelefonica)
