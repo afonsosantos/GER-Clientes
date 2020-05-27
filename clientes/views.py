@@ -1,12 +1,3 @@
-"""
-ASGI config for GER_Clientes project.
-
-It exposes the ASGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/3.0/howto/deployment/asgi/
-"""
-
 #  Copyright 2020 Afonso Santos
 #
 #     Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,10 +12,4 @@ https://docs.djangoproject.com/en/3.0/howto/deployment/asgi/
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-import os
-
-from django.core.asgi import get_asgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'GER_Clientes.settings')
-
-application = get_asgi_application()
+# Create your views here.
