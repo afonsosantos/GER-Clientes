@@ -33,7 +33,6 @@ INSTALLED_APPS = [
 
     # Pip
     'django_countries',
-    'django_adminlte',
 
     # Apps
     'clientes',
