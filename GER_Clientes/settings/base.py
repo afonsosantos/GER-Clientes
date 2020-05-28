@@ -84,3 +84,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TIME_ZONE = 'Europe/Lisbon'
+
+if not DEBUG:
+    import django_heroku
+
+    django_heroku.settings(locals())

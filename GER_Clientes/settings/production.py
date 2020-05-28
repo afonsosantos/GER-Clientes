@@ -12,12 +12,6 @@
 #     See the License for the specific language governing permissions and
 #     limitations under the License.
 
-import os
-
-import django_heroku
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 DEBUG = False
 
 ALLOWED_HOSTS = []
@@ -36,5 +30,3 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-django_heroku.settings(locals())
