@@ -16,6 +16,8 @@ import os
 
 from decouple import config
 
+DEBUG = False
+
 SECRET_KEY = config('SECRET_KEY')
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
