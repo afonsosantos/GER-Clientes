@@ -8,10 +8,5 @@
         <option value="reformat" />
       </set>
     </option>
-    <option name="exclusions">
-      <set>
-        <option value="production.py" />
-      </set>
-    </option>
   </component>
 </project>
