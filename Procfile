@@ -1,0 +1,1 @@
+web: gunicorn GER_Clientes.wsgi

@@ -14,20 +14,37 @@
 
 from django.contrib import admin
 
+from encomendas.models import *
 from .models import *
 
 # Configurações
+
+
 admin.site.site_header = 'GER-Clientes'
 admin.site.site_title = 'GER-Clientes'
 admin.site.index_title = 'Administração do GER-Clientes'
+
+
+# Inline's
 
 
 class ChamadasInline(admin.TabularInline):
     model = ChamadaTelefonica
 
 
+class EncomendasInline(admin.TabularInline):
+    model = Encomenda
+
+
+# Páginas da administração
+
+
 @admin.register(Cliente)
 class ClienteAdmin(admin.ModelAdmin):
+    inlines = [
+        ChamadasInline,
+        EncomendasInline,
+    ]
     fieldsets = (
         ('Dados Pessoais', {
             'classes': ('wide',),
