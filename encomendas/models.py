@@ -36,6 +36,9 @@ class Encomenda(models.Model):
     metodo_pagamento = models.ForeignKey(MetodoPagamento, on_delete=models.SET_NULL, null=True,
                                          verbose_name='Método de Pagamento')
     estado = models.ForeignKey('EstadoEncomenda', on_delete=models.SET_NULL, null=True, verbose_name='Estado')
+    observacoes = models.TextField(verbose_name='Observações')
+    portes = models.BooleanField(verbose_name='Portes?')
+
 
     class Meta:
         verbose_name = 'Encomenda'

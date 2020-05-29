@@ -32,7 +32,7 @@ class ChamadasInline(admin.TabularInline):
     model = ChamadaTelefonica
 
 
-class EncomendasInline(admin.TabularInline):
+class EncomendasInline(admin.StackedInline):
     model = Encomenda
 
 
