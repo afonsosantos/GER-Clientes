@@ -48,7 +48,7 @@ class ClienteAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Dados Pessoais', {
             'classes': ('wide',),
-            'fields': ('nome', 'email', 'telefone', 'data_nascimento', 'cartao_cidadao', 'metodo_pagamento')
+            'fields': ('nome', 'email', 'telefone', 'data_nascimento', 'cartao_cidadao', 'metodo_pagamento', 'numero_parceiro')
         }),
         ('Morada', {
             'classes': ('wide',),
