@@ -63,6 +63,7 @@ class ClienteAdmin(admin.ModelAdmin):
     list_filter = ('metodo_pagamento',)
     list_per_page = 30
     list_select_related = True
+    search_fields = ('nome', 'numero_parceiro',)
 
 
 @admin.register(ChamadaTelefonica)
