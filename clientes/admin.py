@@ -59,7 +59,7 @@ class ClienteAdmin(admin.ModelAdmin):
             'fields': ('perfil_facebook',),
         })
     )
-    list_display = ('nome', 'email', 'telefone', 'localidade')
+    list_display = ('nome', 'email', 'telefone', 'numero_parceiro')
     list_filter = ('metodo_pagamento',)
     list_per_page = 30
     list_select_related = True
