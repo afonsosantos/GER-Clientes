@@ -36,11 +36,11 @@ class Cliente(models.Model):
     morada = models.CharField(max_length=200, verbose_name='Morada (Rua, Avenida, ...)')
     codigo_postal = models.CharField(max_length=8, verbose_name='Código-Postal')
     localidade = models.CharField(max_length=50, verbose_name='Localidade')
-    # pais = models.CharField(max_length=25, verbose_name='País')
     pais = CountryField(blank_label='Selecionar um país...')
     metodo_pagamento = models.ForeignKey('MetodoPagamento', on_delete=models.SET_NULL, null=True,
                                          verbose_name='Método de Pagamento')
     perfil_facebook = models.CharField(max_length=100, blank=True, verbose_name='Perfil no Facebook')
+    numero_parceiro = models.CharField(max_length=15, blank=True, verbose_name='Número de Parceiro')
     registado_em = models.DateTimeField(auto_now_add=True, verbose_name='Registado em')
     atualizado_em = models.DateTimeField(auto_now=True, verbose_name='Atualizado em')
 
